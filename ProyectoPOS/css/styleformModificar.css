@@ -1,0 +1,105 @@
+.principal {
+    background-color: #f2f2f2;
+}
+
+.navbar-custom {
+    background-color: #001c41;
+    /* Cambia este color según tu preferencia */
+}
+
+.navbar-custom .navbar-brand {
+    color: white;
+    /* Cambia el color del texto de la marca */
+}
+
+
+.contenido{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-areas: "nada info nada1"
+                         "nada2 info1 nada3";
+
+
+}
+
+.buscarEnvio{
+    grid-area: info;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    background-color: white;
+
+}
+
+.buscarEnvio button{
+    width: 150px;
+    height: 35px;
+    border: none;
+    background-color: #FFC107;
+}
+
+.buscarEnvio button:hover{
+    background-color: #ff8000;
+    color: white;
+}
+
+.formulario{
+    grid-area: info1;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    background-color: white;
+    
+}
+
+.formulario button{
+    border: none;
+    width: 150px;
+    height: 35px;
+    background-color: #FFC107;
+
+}
+
+.formulario button:hover{
+    background-color: #ff8000;
+    color: white;
+}
+
+.botonCentrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+input{
+    width: 350px;
+    height: 35px;
+    border: none;
+}
+
+input:hover{
+    background-color: #f2f2f2;
+}
+
+.piePagina {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-areas: "nades uno dos tres nades1";
+    background-color: #001c41;
+    color: white;
+    
+}
+
+.uno {
+    grid-area: uno;
+}
+
+.dos {
+    grid-area: dos;
+
+}
+
+.tres {
+    grid-area: tres;
+}

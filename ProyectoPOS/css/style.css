@@ -1,5 +1,3 @@
-
-
 .navbar-custom {
     background-color: #001c41;
     /* Cambia este color según tu preferencia */
@@ -11,49 +9,62 @@
 }
 
 
-.rastrea{
+.rastrea {
     background-image: url('../img/imagenPrincipal.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 500px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.formularioRastreo input{
+.formularioRastreo input {
     height: 40px;
     width: 220px;
     display: grid;
     grid-template-columns: auto;
     grid-template-areas: "titulo"
-                         "boton";
+        "boton";
+    border: none;
+
 
 }
 
-.lblEnvio{
+.formularioRastreo input:hover{
+    background-color: #f2f2f2;
+}
+
+.lblEnvio {
     color: white;
     grid-area: titulo;
 }
 
-.cuadroBotonRastrear{
+.cuadroBotonRastrear {
     grid-area: boton;
-    display:flex;
+    display: flex;
 }
 
-.cuadroBotonRastrear button{
-    background-color: #FFC107 ;
+.cuadroBotonRastrear button {
+    background-color: #FFC107;
+    border: none;
+    color: black;
 }
 
-.menuOpciones{
+.cuadroBotonRastrear button:hover{
+    background-color: #ff8000;
+    color: white;
+}
+
+.menuOpciones {
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
 }
 
-.cajitas{
+.cajitas {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,7 +72,7 @@
 
 }
 
-.cajitas a{
+.cajitas a {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -69,73 +80,73 @@
     text-decoration: none;
     color: #001c41;
     font-size: x-large;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
-.cajitas a img{
+.cajitas a img {
     width: 150px;
     height: 150px;
 }
 
-.cajitas a:hover{
+.cajitas a:hover {
     text-decoration: underline;
 
 }
 
-.parrafoServicios{
+.parrafoServicios {
     display: grid;
     grid-template-columns: 20% 60% 20%;
     grid-template-areas: "nada parrafo nada1";
 
 }
 
-.parrafito{
+.parrafito {
     grid-area: parrafo;
     text-align: justify;
 }
 
 
-.infoEmpresa{
+.infoEmpresa {
     display: grid;
     grid-template-columns: 20% 30% 30% 20%;
     grid-template-areas: "nadas texto imagen nadas1";
     gap: 15px;
 }
 
-.textoEmpresa{
+.textoEmpresa {
     grid-area: texto;
     display: flex;
     flex-direction: column;
     text-align: justify;
 }
 
-.imagenEmpresa{
+.imagenEmpresa {
     grid-area: imagen;
 }
 
-.imagenEmpresa img{
+.imagenEmpresa img {
     height: 90%;
     width: 95%;
 }
 
-.piePagina{
+.piePagina {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-areas: "nades uno dos tres nades1" ;
+    grid-template-areas: "nades uno dos tres nades1";
     background-color: #001c41;
     color: white;
 }
 
-.uno{
+.uno {
     grid-area: uno;
 }
 
-.dos{
+.dos {
     grid-area: dos;
 
 }
 
-.tres{
+.tres {
     grid-area: tres;
 }
