@@ -1,0 +1,141 @@
+
+
+.navbar-custom {
+    background-color: #001c41;
+    /* Cambia este color según tu preferencia */
+}
+
+.navbar-custom .navbar-brand {
+    color: white;
+    /* Cambia el color del texto de la marca */
+}
+
+
+.rastrea{
+    background-image: url('../img/imagenPrincipal.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formularioRastreo input{
+    height: 40px;
+    width: 220px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-areas: "titulo"
+                         "boton";
+
+}
+
+.lblEnvio{
+    color: white;
+    grid-area: titulo;
+}
+
+.cuadroBotonRastrear{
+    grid-area: boton;
+    display:flex;
+}
+
+.cuadroBotonRastrear button{
+    background-color: #FFC107 ;
+}
+
+.menuOpciones{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.cajitas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+
+}
+
+.cajitas a{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #001c41;
+    font-size: x-large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.cajitas a img{
+    width: 150px;
+    height: 150px;
+}
+
+.cajitas a:hover{
+    text-decoration: underline;
+
+}
+
+.parrafoServicios{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-areas: "nada parrafo nada1";
+
+}
+
+.parrafito{
+    grid-area: parrafo;
+    text-align: justify;
+}
+
+
+.infoEmpresa{
+    display: grid;
+    grid-template-columns: 20% 30% 30% 20%;
+    grid-template-areas: "nadas texto imagen nadas1";
+    gap: 15px;
+}
+
+.textoEmpresa{
+    grid-area: texto;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.imagenEmpresa{
+    grid-area: imagen;
+}
+
+.imagenEmpresa img{
+    height: 90%;
+    width: 95%;
+}
+
+.piePagina{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-areas: "nades uno dos tres nades1" ;
+    background-color: #001c41;
+    color: white;
+}
+
+.uno{
+    grid-area: uno;
+}
+
+.dos{
+    grid-area: dos;
+
+}
+
+.tres{
+    grid-area: tres;
+}

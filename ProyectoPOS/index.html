@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOMBRE_EMPRESA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+
+    <!--Esto es el contenedor principal, aqui va a estar la imagen principal y el boton de rastrear-->
+    <div class="principal">
+
+        <!--Aqui es donde va a estar el menu con las 4 opciones de crud-->
+        <div class="cabecera">
+
+            <nav class="navbar navbar-custom">
+
+                <div class="container d-flex align-items-center">
+                    <!-- Imagen y marca -->
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
+                        <span class="ms-2 text-white">Nombre de la empresa</span>
+                    </a>
+                    <!-- Opciones delante de la imagen -->
+                    <ul class="navbar-nav flex-row gap-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Acerca de</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Rastreo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Envío</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+
+
+        <div class="rastrea">
+
+            <form action="" class="formularioRastreo" id="consultaEnvio">
+
+                <h2 class="lblEnvio">
+                    Rastrea tu envío
+                </h2>
+
+                <div class="cuadroBotonRastrear">
+                    <input type="text" id="numEnvio" name="codigoRastrea" placeholder="Ingresa el número de envío"
+                        required>
+
+                    <button type="submit" class="">
+                        Rastrear
+                    </button>
+                </div>
+
+            </form>
+
+
+        </div>
+
+
+        <div class="menuOpciones">
+            <br><br>
+            <h2>Servicios</h2>
+            <br><br>
+
+            <div class="cajitas">
+                <a href="www.google.com">
+                    <img src="img/iconoCrear.png" alt="">
+                    <p>Enviar</p>
+                </a>
+
+                <a href="www.google.com">
+                    <img src="img/iconoModificar.png" alt="">
+                    <p>Modificar envío</p>
+                </a>
+
+                <a href="www.google.com">
+                    <img src="img/iconoRastreo.png" alt="">
+                    <p>Rastrea Envío</p>
+                </a>
+
+                <a href="www.google.com">
+                    <img src="img/iconoCancelar.png" alt="">
+                    <p>Cancelar envío</p>
+                </a>
+
+            </div>
+
+            <div class="parrafoServicios">
+                <p class="parrafito">
+
+                    FedEx no solicita, por medio de mensajes de correo electrónico o SMS no solicitados, pagos, o
+                    información personal a cambio de paquetes en tránsito o en custodia de FedEx. Tampoco solicita
+                    información por medio de llamadas, códigos de verificación enviados a través de SMS o WhatsApp.
+
+                    Si has recibido un mensaje de correo electrónico, SMS o llamada que afirma provenir de FedEx, y esta
+                    no es una forma de comunicación autorizada o solicitada por ti, puedes denunciarlo reenviándolo a
+                    abuse@fedex.com. Así mismo, te invitamos a visitar nuestra página de Reporte de Fraudes, en donde
+                    podrás encontrar más información para prevenirlos.
+
+                    Te informamos que los únicos canales oficiales para dar seguimiento a tus envíos de FedEx son a
+                    través de nuestra página fedex.com/mx o llamando a nuestro centro de atención al cliente,
+                    55.5228.9904.
+                </p>
+            </div>
+
+
+        </div>
+
+
+        <div class="infoEmpresa">
+
+            <div class="textoEmpresa">
+                <h1>
+                    Sobre nosotros
+                </h1>
+                <p>
+
+                    FedEx no solicita, por medio de mensajes de correo electrónico o SMS no solicitados, pagos, o
+                    información personal a cambio de paquetes en tránsito o en custodia de FedEx. Tampoco solicita
+                    información por medio de llamadas, códigos de verificación enviados a través de SMS o WhatsApp.
+
+                    
+                </p>
+            </div>
+
+            <div class="imagenEmpresa">
+                <img src="img/imagenGenteFeliz.jpg" alt="">
+
+            </div>
+
+        </div>
+
+
+        <div class="piePagina">
+
+            <div class="uno">
+                <p>DOMICILIO</p>
+                <p>01 800 5555555555</p>
+                <p>Términos y condiciones</p>
+            </div>
+
+
+            <div class="dos">
+                <p>Aviso de privacidad</p>
+                <p>Uso de cookies</p>
+            </div>
+
+
+            <div class="tres">
+                <p>Siguenos</p>
+                <img src="img/iconosRedes.PNG" alt="">
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+
+</html>
