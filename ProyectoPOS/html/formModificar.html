@@ -21,9 +21,9 @@
 
                 <div class="container d-flex align-items-center">
                     <!-- Imagen y marca -->
-                    <a class="navbar-brand d-flex align-items-center" href="#">
-                        <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
-                        <span class="ms-2 text-white">Pkt Express</span>
+                    <a class="navbar-brand d-flex align-items-center" href="../html/index.html">
+                        <img src="../img/iconoPrincipal.png" alt="Bootstrap" width="30" height="24">
+                        <span class="ms-2 text-white cambiarTamano" >Pkt Express</span>
                     </a>
                     <!-- Opciones delante de la imagen -->
                     <ul class="navbar-nav flex-row gap-3">
@@ -39,6 +39,7 @@
                     </ul>
                 </div>
             </nav>
+
         </div>
 
         <div class="contenido">
@@ -48,65 +49,65 @@
                 <form action="" class="formularioBusquedaEnvio" id="busquedaEnvio">
 
                     <h2 class="lblEnvio">
-                        Búsqueda de envío
-                    </h2>
+                        Búsqueda de envío para editar
+                    </h2><br>
 
                     <div class="cuadroBotonRastrear">
                         <input type="text" id="numEnvio" name="codigoRastrea" placeholder="Ingresa el número de envío"
                             required>
 
                         <button type="submit" class="">
-                            Rastrear
+                            Buscar
                         </button>
                     </div>
                 </form>
                 <br><br>
             </div>
 
-            <div class="formulario" >
+            <div class="formulario">
 
-                <form action=""  id="formularioEnvio" class="formularioEnviar">
+                <form action="" id="formularioEnvio" class="formularioEnviar">
 
-                    <h2>Detalles del envío</h2>
+                    <h2 id="result">Detalles del envío</h2>
                     <h5>Modifique los campos necesarios</h5>
 
                     <p><strong>Datos de contacto</strong></p>
 
                     <label>Nombre del remitente -> </label>
-                    <input type="text" placeholder="Nombre del remitente" required>
+                    <input id="nombreRemitente" type="text" placeholder="Nombre del remitente" required>
                     <br>
 
                     <label>Nombre del destinatario -></label>
-                    <input type="text" placeholder="Nombre del destinatario" required>
+                    <input id="nombreDestinatario" type="text" placeholder="Nombre del destinatario" required>
                     <br>
 
                     <label>Ciudad de origen -></label>
-                    <input type="text" placeholder="Ciudad de origen" required>
+                    <input id="ciudadOrigen" type="text" placeholder="Ciudad de origen" required>
                     <br>
 
                     <label>Ciudad de destino -></label>
-                    <input type="text" placeholder="Ciudad de destino" required>
+                    <input id="ciudadDestino" type="text" placeholder="Ciudad de destino" required>
                     <br>
 
                     <p><strong>Datos del paquete </strong></p>
                     <label>Peso del paquete en Kg -></label>
-                    <input type="number" placeholder="Peso del paquete en Kg" min="1" max="50" required>
+                    <input id="peso" type="number" placeholder="Peso del paquete en Kg" min="1" max="50" required>
                     <br>
 
                     <label>Ancho del paquete en cm -></label>
-                    <input type="number" placeholder="Ancho del paquete en cm" min="1" max="200" required>
+                    <input id="ancho" type="number" placeholder="Ancho del paquete en cm" min="1" max="200" required>
                     <br>
 
                     <label>Largo del paquete en cm -></label>
-                    <input type="number" placeholder="Largo del paquete en cm" min="1" max="200" required>
+                    <input id="largo" type="number" placeholder="Largo del paquete en cm" min="1" max="200" required>
                     <br>
 
                     <label>Alto del paquete en cm -></label>
-                    <input type="number" placeholder="Alto del paquete en cm" min="1" max="200" required>
+                    <input id="alto" type="number" placeholder="Alto del paquete en cm" min="1" max="200" required>
                     <br>
-<br>
-                    <div class="botonCentrar" >
-                        <button class="botonEnviar" disabled type="submit">Enviar</button>
+                    <br>
+                    <div class="botonCentrar">
+                        <button class="botonEnviar" disabled type="submit" id="botonEnviar12">Editar</button>
                     </div>
                     <br><br>
                 </form>
@@ -114,9 +115,6 @@
             </div>
 
         </div>
-
-
-
 
         <div class="piePagina">
             <div class="uno">
@@ -144,7 +142,76 @@
 
     </div>
 
+    <script>
+        const form = document.getElementById('busquedaEnvio');
+        const result = document.getElementById('result');
 
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const id = document.getElementById('numEnvio').value;
+
+            try {
+                const response = await fetch(`http://localhost:3000/consultarEnvios${id}`);
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    for (const key in data) {
+                        const inputElement = document.getElementById(key); // Busca el input por su id
+                        if (inputElement) {
+                            inputElement.value = data[key]; // Asigna el valor correspondiente
+                        }
+                    }
+                    const boton = document.getElementById("botonEnviar12");
+                    boton.disabled = false
+                } else {
+                    result.textContent = `ERROR:  ${data.error}`;
+                }
+            } catch (error) {
+                result.textContent = 'Que triste, paso algo al realizar la conexión.';
+                console.error(error);
+            }
+        });
+
+        const formulario = document.getElementById('formularioEnvio');
+
+        formulario.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const id = document.getElementById('numEnvio').value; // El ID del envío
+            const datosEnvio = {
+                nombreRemitente: document.getElementById('nombreRemitente').value,
+                nombreDestinatario: document.getElementById('nombreDestinatario').value,
+                ciudadOrigen: document.getElementById('ciudadOrigen').value,
+                ciudadDestino: document.getElementById('ciudadDestino').value,
+                peso: document.getElementById('peso').value,
+                ancho: document.getElementById('ancho').value,
+                largo: document.getElementById('largo').value,
+                alto: document.getElementById('alto').value
+            };
+
+            try {
+                const response = await fetch(`http://localhost:3000/actualizarEnvio${id}`, {
+                    method: 'PUT',
+                    headers: {'Content-Type': 'application/json',},
+                    body: JSON.stringify(datosEnvio)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert('Envío actualizado correctamente');
+                } else {
+                    alert(`Error: ${data.error}`);
+                }
+            } catch (error) {
+                alert('Error al conectar con el servidor');
+                console.error(error);
+            }
+        });
+
+    </script>
 
 </body>
 

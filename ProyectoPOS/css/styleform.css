@@ -5,11 +5,22 @@
 .navbar-custom {
     background-color: #001c41;
     /* Cambia este color según tu preferencia */
+    font-size: x-large;
 }
 
 .navbar-custom .navbar-brand {
     color: white;
     /* Cambia el color del texto de la marca */
+}
+
+.navbar-custom img 
+{ 
+    width: 60px; 
+    height: auto; 
+    margin-right: 10px; 
+}
+span{
+    font-size: xx-large;
 }
 
 

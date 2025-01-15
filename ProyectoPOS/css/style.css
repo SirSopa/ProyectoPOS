@@ -1,6 +1,7 @@
 .navbar-custom {
     background-color: #001c41;
     /* Cambia este color según tu preferencia */
+    font-size: x-large;
 }
 
 .navbar-custom .navbar-brand {
@@ -8,8 +9,34 @@
     /* Cambia el color del texto de la marca */
 }
 
+.navbar-custom img 
+{ 
+    width: 60px; 
+    height: auto; 
+    margin-right: 10px; 
+}
+span{
+    font-size: xx-large;
+}
+
+
+.principal{
+    background-color: #f2f2f2;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-areas: "head head head"
+                          "rastrea rastrea rastrea"
+                          "nada menu2 nada1 "
+                          "nada info nada1"
+                          "pie pie pie";
+}
+.cabecera{
+    grid-area: head;
+}
+
 
 .rastrea {
+    grid-area: rastrea;
     background-image: url('../img/imagenPrincipal.jpg');
     background-size: cover;
     background-position: center;
@@ -58,10 +85,12 @@
 }
 
 .menuOpciones {
+    grid-area: menu2;
     align-items: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 
 .cajitas {
@@ -95,8 +124,9 @@
 }
 
 .parrafoServicios {
+   
     display: grid;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 10% 80% 10%;
     grid-template-areas: "nada parrafo nada1";
 
 }
@@ -108,10 +138,12 @@
 
 
 .infoEmpresa {
+    grid-area: info;
     display: grid;
-    grid-template-columns: 20% 30% 30% 20%;
+    grid-template-columns: 10% 40% 40% 10%;
     grid-template-areas: "nadas texto imagen nadas1";
     gap: 15px;
+    background-color: white;
 }
 
 .textoEmpresa {
@@ -131,6 +163,7 @@
 }
 
 .piePagina {
+    grid-area: pie;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-areas: "nades uno dos tres nades1";

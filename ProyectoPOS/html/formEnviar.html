@@ -20,9 +20,9 @@
 
                 <div class="container d-flex align-items-center">
                     <!-- Imagen y marca -->
-                    <a class="navbar-brand d-flex align-items-center" href="#">
-                        <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
-                        <span class="ms-2 text-white">Pkt Express</span>
+                    <a class="navbar-brand d-flex align-items-center" href="../html/index.html">
+                        <img src="../img/iconoPrincipal.png" alt="Bootstrap" width="30" height="24">
+                        <span class="ms-2 text-white cambiarTamano" >Pkt Express</span>
                     </a>
                     <!-- Opciones delante de la imagen -->
                     <ul class="navbar-nav flex-row gap-3">
@@ -49,31 +49,26 @@
 
 
             <form action="" id="formularioEnvio" class="formularioEnviar">
-                <img src="../img/iconoRastreo.png" alt="">
-                <h2>Detalles de envío</h2>
+                <img src="../img/iconomamalon.png" alt="">
+                <h2 id="result">Detalles de envío</h2>
                 <h5>Ingresa los datos de envío</h5>
 
                 <p>Datos de contacto</p>
-                <input type="text" placeholder="Nombre del remitente" required>
-                <input type="text" placeholder="Nombre del destinatario" required>
-                <input type="text" placeholder="Ciudad de origen" required>
-                <input type="text" placeholder="Ciudad de destino" required>
+                <input type="text" placeholder="Nombre del remitente" required id="txtNombreRemitente">
+                <input type="text" placeholder="Nombre del destinatario" required id="txtNombreDestinatario">
+                <input type="text" placeholder="Ciudad de origen" required id="txtCiudadOrigen">
+                <input type="text" placeholder="Ciudad de destino" required id="txtCiudadDestino">
                 <p>Datos del paquete</p>
-                <input type="number" placeholder="Peso del paquete en Kg" min="1" max="50" required>
-                <input type="number" placeholder="Ancho del paquete en cm" min="1" max="200" required>
-                <input type="number" placeholder="Largo del paquete en cm" min="1" max="200" required>
-                <input type="number" placeholder="Alto del paquete en cm" min="1" max="200" required>
+                <input type="number" placeholder="Peso del paquete en Kg" min="1" max="50" required id="txtPeso">
+                <input type="number" placeholder="Ancho del paquete en cm" min="1" max="200" required id="txtAncho">
+                <input type="number" placeholder="Largo del paquete en cm" min="1" max="200" required id="txtLargo">
+                <input type="number" placeholder="Alto del paquete en cm" min="1" max="200" required id="txtAlto">
 
 
                 <button class="botonEnviar" type="submit">Enviar</button>
-
             </form>
-
         </div>
-
-
-
-<br><br>
+        <br><br>
         <div class="piePagina">
             <div class="uno">
                 <p>DOMICILIO</p>
@@ -95,6 +90,49 @@
 
         </div>
     </div>
+
+    <script>
+        const form = document.getElementById('formularioEnvio');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            let nombreRemitente = document.getElementById('txtNombreRemitente').value;
+            nombreRemitente = nombreRemitente.toUpperCase();
+            let nombreDestinatario = document.getElementById('txtNombreDestinatario').value;
+            nombreDestinatario = nombreDestinatario.toUpperCase();
+            const ciudadOrigen = document.getElementById('txtCiudadOrigen').value;
+            const ciudadDestino = document.getElementById('txtCiudadDestino').value;
+            const peso = document.getElementById('txtPeso').value;
+            const ancho = document.getElementById('txtAncho').value;
+            const largo = document.getElementById('txtLargo').value;
+            const alto = document.getElementById('txtAlto').value;
+            
+            try {
+                const response = await fetch('http://localhost:3000/agregarEnvio',{
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ nombreRemitente, nombreDestinatario, peso, alto, ancho, largo, ciudadOrigen, ciudadDestino}),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert(`Envío recibido correctamente, su número de rastreo es: ${data.id} y el costo de envío es: $ ${data.costo} USD`);
+                } else {
+                    alert(`Error: ${data.error}`);
+                }
+            } catch (error) {
+                result.textContent = 'Que triste, paso algo al realizar la conexión.';
+                console.error(error);
+            }
+        });
+
+
+    </script>
 
 </body>
 

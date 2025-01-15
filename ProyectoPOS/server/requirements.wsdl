@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" 
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+             xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+             xmlns:tns="http://example.com/paqueteria"
+             targetNamespace="http://example.com/paqueteria">
+
+    <!-- Types -->
+    <types>
+        <xs:schema targetNamespace="http://example.com/paqueteria">
+            <xs:element name="GeneraIDRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nombreRemitente" type="xs:string"/>
+                        <xs:element name="nombreDestinatario" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="GeneraIDResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="result" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="CotizaEnvioRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="ancho" type="xs:int"/>
+                        <xs:element name="largo" type="xs:int"/>
+                        <xs:element name="alto" type="xs:int"/>
+                        <xs:element name="peso" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="CotizaEnvioResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="result" type="xs:float"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="RecibirComentariosRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nombreCliente" type="xs:string"/>
+                        <xs:element name="comentario" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RecibirComentariosResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="result" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </types>
+
+    <!-- Messages -->
+    <message name="GeneraIDRequest">
+        <part name="parameters" element="tns:GeneraIDRequest"/>
+    </message>
+    <message name="GeneraIDResponse">
+        <part name="parameters" element="tns:GeneraIDResponse"/>
+    </message>
+
+    <message name="CotizaEnvioRequest">
+        <part name="parameters" element="tns:CotizaEnvioRequest"/>
+    </message>
+    <message name="CotizaEnvioResponse">
+        <part name="parameters" element="tns:CotizaEnvioResponse"/>
+    </message>
+
+    <message name="RecibirComentariosRequest">
+        <part name="parameters" element="tns:RecibirComentariosRequest"/>
+    </message>
+    <message name="RecibirComentariosResponse">
+        <part name="parameters" element="tns:RecibirComentariosResponse"/>
+    </message>
+
+    <!-- Port Type -->
+    <portType name="ServicioPaqueteriaPortType">
+        <operation name="GeneraID">
+            <input message="tns:GeneraIDRequest"/>
+            <output message="tns:GeneraIDResponse"/>
+        </operation>
+        <operation name="CotizaEnvio">
+            <input message="tns:CotizaEnvioRequest"/>
+            <output message="tns:CotizaEnvioResponse"/>
+        </operation>
+        <operation name="RecibirComentarios">
+            <input message="tns:RecibirComentariosRequest"/>
+            <output message="tns:RecibirComentariosResponse"/>
+        </operation>
+    </portType>
+
+    <!-- Binding -->
+    <binding name="ServicioPaqueteriaBinding" type="tns:ServicioPaqueteriaPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="GeneraID">
+            <soap:operation soapAction="http://example.com/paqueteria/GeneraID"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="CotizaEnvio">
+            <soap:operation soapAction="http://example.com/paqueteria/CotizaEnvio"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="RecibirComentarios">
+            <soap:operation soapAction="http://example.com/paqueteria/RecibirComentarios"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <!-- Service -->
+    <service name="ServicioPaqueteria">
+        <port name="ServicioPaqueteriaPort" binding="tns:ServicioPaqueteriaBinding">
+            <soap:address location="http://localhost:3000/ServicioPaqueteria"/>
+        </port>
+    </service>
+
+</definitions>

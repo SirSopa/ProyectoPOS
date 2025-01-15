@@ -1,0 +1,71 @@
+[
+  {
+    "id": "ALFS162130",
+    "nombreRemitente": "Joel Luna",
+    "nombreDestinatario": "juan loba uwu",
+    "peso": "15",
+    "alto": "30",
+    "ancho": "15",
+    "largo": "10",
+    "estado": "Recibido",
+    "ciudadOrigen": "Jalisco",
+    "ciudadDestino": "Monterrey"
+  },
+  {
+    "id": "JLJR153021",
+    "nombreRemitente": "Citallli Ramirez",
+    "nombreDestinatario": "Juan Ramero",
+    "peso": "6",
+    "alto": "20",
+    "ancho": "10",
+    "largo": "50",
+    "estado": "En tránsito",
+    "ciudadOrigen": "Puebla",
+    "ciudadDestino": "Puebla"
+  },
+  {
+    "id": "JLAD153021",
+    "nombreRemitente": "Citallli Ramirez",
+    "nombreDestinatario": "Juan Ramero",
+    "peso": "6",
+    "alto": "50",
+    "ancho": "10",
+    "largo": "50",
+    "estado": "En tránsito",
+    "ciudadOrigen": "Puebla",
+    "ciudadDestino": "Puebla"
+  },
+  {
+    "id": "LEDI204827",
+    "nombreRemitente": "LEO",
+    "nombreDestinatario": "DIEGO",
+    "peso": "11",
+    "alto": "11",
+    "ancho": "11",
+    "largo": "11",
+    "ciudadOrigen": "ecatepec",
+    "ciudadDestino": "tlane"
+  },
+  {
+    "id": "SPJU204827",
+    "nombreRemitente": "SPARTAN",
+    "nombreDestinatario": "JUAN",
+    "peso": "10",
+    "alto": "10",
+    "ancho": "10",
+    "largo": "10",
+    "ciudadOrigen": "tlane",
+    "ciudadDestino": "uam"
+  },
+  {
+    "id": "SPIT20518",
+    "nombreRemitente": "SPARTAN",
+    "nombreDestinatario": "ITZEL",
+    "peso": "10",
+    "alto": "10",
+    "ancho": "10",
+    "largo": "10",
+    "ciudadOrigen": "tlane",
+    "ciudadDestino": "pilindeperro"
+  }
+]

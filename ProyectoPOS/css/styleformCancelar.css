@@ -5,81 +5,90 @@
 .navbar-custom {
     background-color: #001c41;
     /* Cambia este color según tu preferencia */
+    font-size: x-large;
 }
 
 .navbar-custom .navbar-brand {
     color: white;
     /* Cambia el color del texto de la marca */
 }
-
+.navbar-custom img 
+{ 
+    width: 60px; 
+    height: auto; 
+    margin-right: 10px; 
+}
+span{
+    font-size: xx-large;
+}
 
 .contenido {
 
     display: grid;
     grid-template-columns: 20% 60% 20%;
     grid-template-areas: "nadi contenido nadi1"
-        "node contenido1 node1";
+                        "node contenido1 node1";
     
 
 }
 
 .buscarEnvio {
     grid-area: contenido;
-}
-
-.formularioBusquedaEnvio {
     align-items: center;
     justify-content: center;
     justify-items: center;
     background-color: white;
 }
 
+.buscarEnvio button{
+    width: 150px;
+    height: 35px;
+    border: none;
+    background-color: #FFC107;
+}
 
-.formularioBusquedaEnvio input {
-    width: 400px;
-    height: 50px;
+.buscarEnvio button:hover{
+    background-color: #ff8000;
+    color: white;
+}
+
+.formulario{
+    grid-area: contenido1;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    background-color: white;
+}
+
+.formulario button{
+    border: none;
+    width: 150px;
+    height: 35px;
+    background-color: #FFC107;
+
+}
+
+.formulario button:hover{
+    background-color: #ff8000;
+    color: white;
+}
+
+.botonCentrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+input{
+    width: 350px;
+    height: 35px;
     border: none;
 }
 
-.formularioBusquedaEnvio input:hover {
+input:hover{
     background-color: #f2f2f2;
 }
-
-.formularioBusquedaEnvio button {
-    width: 150px;
-    height: 50px;
-    border: none;
-    background-color: #FFC107;
-}
-
-.formularioBusquedaEnvio button:hover {
-    background-color: #ff8000;
-    color: white;
-}
-
-
-.muestraEnvio {
-    grid-area: contenido1;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-}
-
-.infoEnvio button{
-    width: 150px;
-    height: 50px;
-    border: none;
-    background-color: #FFC107;
-}
-
-.infoEnvio button:hover{
-    background-color: #ff8000;
-    color: white;
-}
-
 
 
 
@@ -90,10 +99,7 @@
     grid-template-areas: "nades uno dos tres nades1";
     background-color: #001c41;
     color: white;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+   
 }
 
 .uno {

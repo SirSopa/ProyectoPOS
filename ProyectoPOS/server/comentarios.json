@@ -1,0 +1,30 @@
+[
+  {
+    "nombreCliente": "Francisco Segura",
+    "comentario": "*Gracias Francisco Segura por el siguiente comentario: \nBuen servicio, rapido y amables"
+  },
+  {
+    "nombreCliente": "Joel Luna",
+    "comentario": "*Gracias Joel Luna por el siguiente comentario: \nExcelente servicio, buen repartidor estaba guapo"
+  },
+  {
+    "nombreCliente": "Itzel Lopez",
+    "comentario": "*Gracias Itzel Lopez por el siguiente comentario: \nMe agrado el servicio y la sencillez para enviar mi paquete"
+  },
+  {
+    "nombreCliente": "Carolina Perez",
+    "comentario": "*Gracias Carolina Perez por el siguiente comentario: \nMal servicio, el paquete llego roto"
+  },
+  {
+    "nombreCliente": "Juan Perez",
+    "comentario": "*Gracias Juan Perez por el siguiente comentario: \nEl servicio es regular. No me agrado del todo"
+  },
+  {
+    "nombreCliente": "Alejandra Lopez",
+    "comentario": "*Gracias Alejandra Lopez por el siguiente comentario: \nEl servicio es bueno, me gusto"
+  },
+  {
+    "nombreCliente": "Alicia Perez",
+    "comentario": "*Gracias Alicia Perez por el siguiente comentario: \nEl servicio normal. Un poco tardío pero bien"
+  }
+]
