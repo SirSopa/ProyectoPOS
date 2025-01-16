@@ -26,18 +26,22 @@
                     <!-- Imagen y marca -->
                     <a class="navbar-brand d-flex align-items-center" href="../html/index.html">
                         <img src="../img/iconoPrincipal.png" alt="Bootstrap" width="30" height="24">
-                        <span class="ms-2 text-white cambiarTamano" >Pkt Express</span>
+                        <span class="ms-2 text-white cambiarTamano">Pkt Express</span>
                     </a>
                     <!-- Opciones delante de la imagen -->
                     <ul class="navbar-nav flex-row gap-3">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Acerca de</a>
+                            <a class="nav-link text-white" href="#textoAcerca">Acerca de</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="../html/formRastrear.html">Rastreo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="../html/formEnviar.html">Envío</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../html/formComentario.html">Comentarios</a>
                         </li>
                     </ul>
                 </div>
@@ -46,7 +50,7 @@
         </div>
 
 
-        <div class="rastrea" >
+        <div class="rastrea">
 
             <form action="" class="formularioRastreo" id="consultaEnvio">
 
@@ -71,8 +75,10 @@
 
         <div class="menuOpciones">
             <br><br>
+
             <h2>Servicios</h2>
-            <br><br>
+
+            <br>
 
             <div class="cajitas">
                 <a href="../html/formEnviar.html">
@@ -94,7 +100,7 @@
                     <img src="../img/iconoCancelar.png" alt="">
                     <p>Cancelar envío</p>
                 </a>
-                
+
 
             </div>
 
@@ -102,54 +108,64 @@
                 <br><br>
                 <p class="parrafito">
 
-                    FedEx no solicita, por medio de mensajes de correo electrónico o SMS no solicitados, pagos, o
-                    información personal a cambio de paquetes en tránsito o en custodia de FedEx. Tampoco solicita
-                    información por medio de llamadas, códigos de verificación enviados a través de SMS o WhatsApp.
+                    ¡Bienvenido a nuestro servicio de paquetería!
 
-                    Si has recibido un mensaje de correo electrónico, SMS o llamada que afirma provenir de FedEx, y esta
-                    no es una forma de comunicación autorizada o solicitada por ti, puedes denunciarlo reenviándolo a
-                    abuse@fedex.com. Así mismo, te invitamos a visitar nuestra página de Reporte de Fraudes, en donde
-                    podrás encontrar más información para prevenirlos.
+                    En nuestra plataforma, podrás realizar todo el proceso de envío de manera rápida y sencilla.
+                    Ofrecemos las siguientes funcionalidades:
 
-                    Te informamos que los únicos canales oficiales para dar seguimiento a tus envíos de FedEx son a
-                    través de nuestra página fedex.com/mx o llamando a nuestro centro de atención al cliente,
-                    55.5228.9904.
+                    Registro de Envío: Registra tus envíos de forma fácil y segura, proporcionando los detalles
+                    necesarios para una entrega precisa.
+                    Actualización de Envíos: Mantente al tanto del estado de tu paquete con nuestras opciones de
+                    actualización en tiempo real.
+                    Eliminación de Envíos: Si necesitas cancelar un envío, puedes hacerlo de manera rápida desde tu
+                    cuenta.
+                    Rastreo de Paquetes: Haz el seguimiento de tus envíos en cualquier momento, con solo ingresar el
+                    número de seguimiento.
+                    Te brindamos una experiencia eficiente para que puedas manejar tus envíos sin complicaciones.
+                    ¡Comienza ahora y disfruta de nuestros servicios!
+                    <br><br>
+
                 </p>
             </div>
 
-<br><br>
+            <br><br>
         </div>
 
-
         <div class="infoEmpresa">
-
-            <div class="textoEmpresa">
+            <div class="textoEmpresa" id="textoAcerca">
                 <h1>
                     Sobre nosotros
                 </h1>
                 <p>
 
-                    FedEx no solicita, por medio de mensajes de correo electrónico o SMS no solicitados, pagos, o
-                    información personal a cambio de paquetes en tránsito o en custodia de FedEx. Tampoco solicita
-                    información por medio de llamadas, códigos de verificación enviados a través de SMS o WhatsApp.
+                    En PKT Express, entendemos que cada paquete cuenta una historia, lleva una emoción o
+                    representa un compromiso. Desde nuestros inicios, hemos trabajado incansablemente para convertirnos
+                    en un aliado confiable para personas y empresas que necesitan soluciones de paquetería rápidas,
+                    seguras y accesibles.
 
-                    
+
+
+                </p>
+
+                <p id="llamadaAPI">
+
                 </p>
             </div>
 
             <div class="imagenEmpresa">
                 <img src="../img/imagenGenteFeliz.jpg" alt="">
+                <br><br><br>
 
             </div>
 
-        </div>
 
+        </div>
 
         <div class="piePagina">
 
             <div class="uno">
-                <p>DOMICILIO</p>
-                <p>01 800 5555555555</p>
+                <p>Av San Pablo Xalpa 180, San Martin Xochinahuac, Azcapotzalco, 02128 Ciudad de México, CDMX</p>
+                <p>55 5318 9000</p>
                 <p>Términos y condiciones</p>
             </div>
 
@@ -168,16 +184,69 @@
 
         </div>
 
-
     </div>
 
 
+    <script>
+
+        const formulario = document.getElementById("consultaEnvio");
+        formulario.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById("numEnvio").value;
+
+            try {
+
+                const response = await fetch(`http://localhost:3000/consultarEnvios${id}`);
+
+                const data = await response.json();
+
+                if (response.ok) {
 
 
+                    localStorage.setItem('datosFormulario', JSON.stringify(data));
+                    window.location.href = '../html/formRastrear.html';
+
+
+                } else {
+                    alert(`${data.error}`)
+                }
+
+            } catch (error) {
+                alert('Algo ocurrio con la conexión')
+            }
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('http://localhost:3000/obtenerFrase')
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error("Error al obtener la frase del día");
+                    }
+                    return response.json();
+                })
+                .then(function (frase) {
+                    //alert(`${frase.affirmation}`);
+                    const hoja = document.getElementById("llamadaAPI");
+                    hoja.textContent = `${frase.affirmation}`;
+                })
+                .catch(function (error) {
+                    alert('no se puede obtener la frase');
+                })
+        });
+
+
+
+
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+
+        </script>
+
+
+
 </body>
 
 

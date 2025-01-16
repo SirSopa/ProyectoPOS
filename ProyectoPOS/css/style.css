@@ -1,12 +1,10 @@
 .navbar-custom {
     background-color: #001c41;
-    /* Cambia este color según tu preferencia */
     font-size: x-large;
 }
 
 .navbar-custom .navbar-brand {
     color: white;
-    /* Cambia el color del texto de la marca */
 }
 
 .navbar-custom img 
@@ -15,6 +13,14 @@
     height: auto; 
     margin-right: 10px; 
 }
+
+.navbar-custom .nav-link:hover {
+    text-decoration: underline;
+    text-decoration: none;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
 span{
     font-size: xx-large;
 }
@@ -97,7 +103,7 @@ span{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 90px;
+    gap: 30px;
 
 }
 
@@ -110,12 +116,20 @@ span{
     color: #001c41;
     font-size: x-large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
 
+.cajitas a:hover {
+    transform: translateY(-5px);
+    color: #FF8000;
 }
 
 .cajitas a img {
     width: 150px;
     height: 150px;
+    border-radius: 10%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .cajitas a:hover {
@@ -124,7 +138,7 @@ span{
 }
 
 .parrafoServicios {
-   
+    border-bottom: 2px solid #001c41;
     display: grid;
     grid-template-columns: 10% 80% 10%;
     grid-template-areas: "nada parrafo nada1";
@@ -144,6 +158,7 @@ span{
     grid-template-areas: "nadas texto imagen nadas1";
     gap: 15px;
     background-color: white;
+    
 }
 
 .textoEmpresa {
@@ -153,14 +168,36 @@ span{
     text-align: justify;
 }
 
+.textoEmpresa h1{
+    font-size: 2rem;
+    color: #001c41;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 5px solid #ffcc00; /* Línea debajo del título */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.textoEmpresa p {
+    font-size: 1rem;
+    color: #333333;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
 .imagenEmpresa {
     grid-area: imagen;
 }
 
 .imagenEmpresa img {
-    height: 90%;
-    width: 95%;
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+
 
 .piePagina {
     grid-area: pie;
@@ -182,4 +219,13 @@ span{
 
 .tres {
     grid-area: tres;
+}
+
+.piePagina p:hover{
+    text-decoration: underline;
+    text-decoration: none;
+    color: #ffcc00;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+
 }

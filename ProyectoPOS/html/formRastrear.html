@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <link rel="stylesheet" href="../css/styleformModificar.css">
+    <link rel="stylesheet" href="../css/styleformRastrear.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificación de envío</title>
@@ -23,18 +23,22 @@
                     <!-- Imagen y marca -->
                     <a class="navbar-brand d-flex align-items-center" href="../html/index.html">
                         <img src="../img/iconoPrincipal.png" alt="Bootstrap" width="30" height="24">
-                        <span class="ms-2 text-white cambiarTamano" >Pkt Express</span>
+                        <span class="ms-2 text-white cambiarTamano">Pkt Express</span>
                     </a>
                     <!-- Opciones delante de la imagen -->
                     <ul class="navbar-nav flex-row gap-3">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Acerca de</a>
+                            <a class="nav-link text-white" href="../html/index.html#textoAcerca">Acerca de</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Rastreo</a>
+                            <a class="nav-link text-white" href="../html/formRastrear.html">Rastreo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Envío</a>
+                            <a class="nav-link text-white" href="../html/formEnviar.html">Envío</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../html/formComentario.html">Comentarios</a>
                         </li>
                     </ul>
                 </div>
@@ -69,8 +73,6 @@
                 <form action="" id="formularioEnvio" class="formularioEnviar">
 
                     <h2 id="result">Detalles del envío</h2>
-                    <h5>Modifique los campos necesarios</h5>
-
                     <p><strong>Datos de contacto</strong></p>
 
                     <label>Nombre del remitente -> </label>
@@ -91,22 +93,26 @@
 
                     <p><strong>Datos del paquete </strong></p>
                     <label>Peso del paquete en Kg -></label>
-                    <input id="peso" type="number" placeholder="Peso del paquete en Kg" min="1" max="50" required readonly>
+                    <input id="peso" type="number" placeholder="Peso del paquete en Kg" min="1" max="50" required
+                        readonly>
                     <br>
 
                     <label>Ancho del paquete en cm -></label>
-                    <input id="ancho" type="number" placeholder="Ancho del paquete en cm" min="1" max="200" required readonly>
+                    <input id="ancho" type="number" placeholder="Ancho del paquete en cm" min="1" max="200" required
+                        readonly>
                     <br>
 
                     <label>Largo del paquete en cm -></label>
-                    <input id="largo" type="number" placeholder="Largo del paquete en cm" min="1" max="200" required readonly>
+                    <input id="largo" type="number" placeholder="Largo del paquete en cm" min="1" max="200" required
+                        readonly>
                     <br>
 
                     <label>Alto del paquete en cm -></label>
-                    <input id="alto" type="number" placeholder="Alto del paquete en cm" min="1" max="200" required readonly>
+                    <input id="alto" type="number" placeholder="Alto del paquete en cm" min="1" max="200" required
+                        readonly>
                     <br>
                     <br>
-                    
+
                     <br><br>
                 </form>
 
@@ -115,9 +121,10 @@
         </div>
 
         <div class="piePagina">
+
             <div class="uno">
-                <p>DOMICILIO</p>
-                <p>01 800 5555555555</p>
+                <p>Av San Pablo Xalpa 180, San Martin Xochinahuac, Azcapotzalco, 02128 Ciudad de México, CDMX</p>
+                <p>55 5318 9000</p>
                 <p>Términos y condiciones</p>
             </div>
 
@@ -133,8 +140,8 @@
                 <img src="../img/iconosRedes.PNG" alt="">
             </div>
 
-        </div>
 
+        </div>
 
 
 
@@ -160,17 +167,48 @@
                         if (inputElement) {
                             inputElement.value = data[key]; // Asigna el valor correspondiente
                         }
+
                     }
+                    result.textContent = `DETALLES DEL ENVÍO`
                     const boton = document.getElementById("botonEnviar12");
                     boton.disabled = false
                 } else {
-                    result.textContent = `ERROR:  ${data.error}`;
+                    alert(`ERROR:  ${data.error}`);
+
+                    location.reload();
+
                 }
             } catch (error) {
-                result.textContent = 'Que triste, paso algo al realizar la conexión.';
-                console.error(error);
+                //result.textContent = 'Que triste, paso algo al realizar la conexión.';
+                //console.error(error);
             }
         });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const datos = JSON.parse(localStorage.getItem('datosFormulario'));
+
+            if (datos) {
+
+                for (const key in datos) {
+
+                    const inputElement = document.getElementById(key); // Busca el input por su id
+
+                    if (inputElement) {
+                        inputElement.value = datos[key]; // Asigna el valor correspondiente
+                    }
+                }
+
+                const envio = document.getElementById("numEnvio");
+                envio.value = datos.id;
+                localStorage.removeItem('datosFormulario');
+
+            }
+
+        });
+
+
+
     </script>
 
 </body>

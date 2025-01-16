@@ -13,6 +13,11 @@
     /* Cambia el color del texto de la marca */
 }
 
+.navbar-custom .nav-link:hover {
+    color: #ffc107; /* Cambia el color a dorado */
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
 .navbar-custom img 
 { 
     width: 60px; 
@@ -29,8 +34,7 @@ span{
     grid-template-columns: 20% 60% 20%;
     grid-template-areas: "nada info nada1"
                          "nada2 info1 nada3";
-
-
+                         
 }
 
 .buscarEnvio{
@@ -54,6 +58,8 @@ span{
     color: white;
 }
 
+
+
 .formulario{
     grid-area: info1;
     align-items: center;
@@ -61,6 +67,18 @@ span{
     justify-items: center;
     background-color: white;
     
+    
+}
+
+
+#result{
+    font-size: 2rem;
+    color: #001c41;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #ffcc00; /* Línea debajo del título */
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 .formulario button{
@@ -113,4 +131,13 @@ input:hover{
 
 .tres {
     grid-area: tres;
+}
+
+.piePagina p:hover{
+    text-decoration: underline;
+    text-decoration: none;
+    color: #ffcc00;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+
 }

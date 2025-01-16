@@ -57,6 +57,26 @@ const service = {
 };
 
 /*Servicio REST*/
+app.get('/obtenerFrase', async (req, res) => {
+    fetch("https://www.affirmations.dev/")
+        .then(response => {
+
+            if (!response.ok) {
+                console.log("no hay respuesta");
+            }
+
+            return response.json();
+            
+        })
+        .then(data => {
+            res.json(data);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+});
+
+
 app.post('/agregarComentario', async (req, res) => {
 
     const { nombreCliente, comentario } = req.body;

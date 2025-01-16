@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <link rel="stylesheet" href="../css/styleform.css">
@@ -22,18 +22,22 @@
                     <!-- Imagen y marca -->
                     <a class="navbar-brand d-flex align-items-center" href="../html/index.html">
                         <img src="../img/iconoPrincipal.png" alt="Bootstrap" width="30" height="24">
-                        <span class="ms-2 text-white cambiarTamano" >Pkt Express</span>
+                        <span class="ms-2 text-white cambiarTamano">Pkt Express</span>
                     </a>
                     <!-- Opciones delante de la imagen -->
                     <ul class="navbar-nav flex-row gap-3">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Acerca de</a>
+                            <a class="nav-link text-white" href="../html/index.html#textoAcerca">Acerca de</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Rastreo</a>
+                            <a class="nav-link text-white" href="../html/formRastrear.html">Rastreo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Envío</a>
+                            <a class="nav-link text-white" href="../html/formEnviar.html">Envío</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../html/formComentario.html">Comentarios</a>
                         </li>
                     </ul>
                 </div>
@@ -47,8 +51,8 @@
         <div class="formulario">
 
 
-
             <form action="" id="formularioEnvio" class="formularioEnviar">
+
                 <img src="../img/iconomamalon.png" alt="">
                 <h2 id="result">Detalles de envío</h2>
                 <h5>Ingresa los datos de envío</h5>
@@ -67,12 +71,16 @@
 
                 <button class="botonEnviar" type="submit">Enviar</button>
             </form>
+
+            <p id="costos"></p>
+
         </div>
         <br><br>
         <div class="piePagina">
+
             <div class="uno">
-                <p>DOMICILIO</p>
-                <p>01 800 5555555555</p>
+                <p>Av San Pablo Xalpa 180, San Martin Xochinahuac, Azcapotzalco, 02128 Ciudad de México, CDMX</p>
+                <p>55 5318 9000</p>
                 <p>Términos y condiciones</p>
             </div>
 
@@ -88,12 +96,15 @@
                 <img src="../img/iconosRedes.PNG" alt="">
             </div>
 
+
         </div>
     </div>
 
     <script>
         const form = document.getElementById('formularioEnvio');
         const result = document.getElementById('result');
+
+        
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -108,20 +119,23 @@
             const ancho = document.getElementById('txtAncho').value;
             const largo = document.getElementById('txtLargo').value;
             const alto = document.getElementById('txtAlto').value;
-            
+
             try {
-                const response = await fetch('http://localhost:3000/agregarEnvio',{
+                const response = await fetch('http://localhost:3000/agregarEnvio', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ nombreRemitente, nombreDestinatario, peso, alto, ancho, largo, ciudadOrigen, ciudadDestino}),
+                    body: JSON.stringify({ nombreRemitente, nombreDestinatario, peso, alto, ancho, largo, ciudadOrigen, ciudadDestino }),
                 });
 
                 const data = await response.json();
 
                 if (response.ok) {
-                    alert(`Envío recibido correctamente, su número de rastreo es: ${data.id} y el costo de envío es: $ ${data.costo} USD`);
+
+                    
+                    alert(`Envío recibido correctamente tu código de rastreo es: ${data.id} y el costo es de: ${data.costo}`);
+
                 } else {
                     alert(`Error: ${data.error}`);
                 }

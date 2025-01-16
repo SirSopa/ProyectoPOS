@@ -13,6 +13,20 @@
     /* Cambia el color del texto de la marca */
 }
 
+#result{
+    font-size: 2rem;
+    color: #001c41;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 5px solid #ffcc00; /* Línea debajo del título */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #ffc107; /* Cambia el color a dorado */
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+}
 .navbar-custom img 
 { 
     width: 60px; 
@@ -88,4 +102,13 @@ span{
 
 .tres{
     grid-area: tres;
+}
+
+.piePagina p:hover{
+    text-decoration: underline;
+    text-decoration: none;
+    color: #ffcc00;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+
 }
