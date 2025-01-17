@@ -70,8 +70,9 @@
 
 
                 <button class="botonEnviar" type="submit">Enviar</button>
+                <br>
             </form>
-
+            <br>
             <p id="costos"></p>
 
         </div>
@@ -104,7 +105,7 @@
         const form = document.getElementById('formularioEnvio');
         const result = document.getElementById('result');
 
-        
+
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -133,8 +134,9 @@
 
                 if (response.ok) {
 
-                    
-                    alert(`Envío recibido correctamente tu código de rastreo es: ${data.id} y el costo es de: ${data.costo}`);
+
+                    alert(`Envío recibido correctamente tu código de rastreo es: ${data.id} y el costo es de: ${data.costo} USD`);
+                    location.reload();
 
                 } else {
                     alert(`Error: ${data.error}`);

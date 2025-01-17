@@ -6,5 +6,37 @@
   {
     "nombreCliente": "Joel Luna",
     "comentario": "*Gracias Joel Luna por el siguiente comentario: \nExcelente servicio, buen repartidor estaba guapo"
+  },
+  {
+    "nombreCliente": "Joel",
+    "comentario": "*Gracias Joel por el siguiente comentario: \nMe gusto el servicio"
+  },
+  {
+    "nombreCliente": "Pancho",
+    "comentario": "*Gracias Pancho por el siguiente comentario: \nme gusto el servicio :)"
+  },
+  {
+    "nombreCliente": "Juan",
+    "comentario": "*Gracias Juan por el siguiente comentario: \nEl servicio es regular"
+  },
+  {
+    "nombreCliente": "Citlali",
+    "comentario": "*Gracias Citlali por el siguiente comentario: \nServicio agradable"
+  },
+  {
+    "nombreCliente": "Gilberto",
+    "comentario": "*Gracias Gilberto por el siguiente comentario: \nEl servicio es bueno"
+  },
+  {
+    "nombreCliente": "Aitana",
+    "comentario": "*Gracias Aitana por el siguiente comentario: \nEl servicio esta chido"
+  },
+  {
+    "nombreCliente": "Leo",
+    "comentario": "*Gracias Leo por el siguiente comentario: \nme gusta la pagina"
+  },
+  {
+    "nombreCliente": "Pancho",
+    "comentario": "*Gracias Pancho por el siguiente comentario: \nEl servicio es normal"
   }
 ]

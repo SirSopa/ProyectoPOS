@@ -42,7 +42,7 @@
                     </ul>
                 </div>
             </nav>
-
+            <br>
         </div>
 
 
@@ -63,16 +63,17 @@
                 <br><br>
 
             </form>
-            <br><br>
+
         </div>
 
         <div class="comentariosClientes">
-            <br><br>
+            <br>
             <h3>Lee lo que dicen sobre nosotros...</h3>
             <br>
             <p id="etiquetaComentarios">AQUI QUIERO QUE APAREZCAN LOS COMENTARIOS </p>
+            <br>
         </div>
-
+        <br><br>
         <div class="piePagina">
 
             <div class="uno">
@@ -152,13 +153,18 @@
 
                 if (response.ok) {
                     alert(`${data.resComentario}`);
+                    document.getElementById('formularioComentarios').reset();
+                    location.reload();
+
                 } else {
                     alert(`Error: ${data.error}`);
+                    //Location.reload();
                 }
 
 
             } catch (error) {
                 alert("Fallo en la conexión cuando enviabamos tu comentario");
+                //Location.reload();
             }
 
         });

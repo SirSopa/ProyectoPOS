@@ -19,6 +19,11 @@
     height: auto; 
     margin-right: 10px; 
 }
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
 span{
     font-size: xx-large;
 }
@@ -39,21 +44,36 @@ span{
 }
 
 .formularioComentario{
+    height: 500px;
     background-color: white;
     grid-area: formulario;
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20 px;
+    margin: 10px 50px;
 }
 
 .comentariosClientes{
-    
+    height: 500px;
     background-color: white;
     grid-area: comentarios;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    justify-content: flex-start;
+    justify-items: center;
+    border: 1px solid #e0e0e0;
+    border-radius:10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 200x 200px;
+    overflow-y: scroll; 
+    overflow-x: hidden;
 }
 
 .botonEnviar{
@@ -61,6 +81,16 @@ span{
     align-items: center;
     justify-content: center;
     
+}
+
+
+.comentario {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 button{
@@ -80,6 +110,11 @@ button:hover{
     width: 400px;
     height: 50px;
     border: none;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .inputChico:hover{
@@ -91,15 +126,18 @@ button:hover{
     height: 200px;
     border: none;
     resize: none;
+    border-radius: 5px;
+    padding: 0 10px;
+    background-color: #f8f9fa;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
+ 
 }
 
 .inputGrande:hover{
     background-color: #f2f2f2 ;
 }
-
-
-
-
 
 
 
@@ -124,7 +162,6 @@ button:hover{
 .tres {
     grid-area: tres;
 }
-
 
 .piePagina p:hover{
     text-decoration: underline;

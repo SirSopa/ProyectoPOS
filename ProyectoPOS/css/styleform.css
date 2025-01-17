@@ -13,26 +13,17 @@
     /* Cambia el color del texto de la marca */
 }
 
-#result{
-    font-size: 2rem;
-    color: #001c41;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    border-bottom: 5px solid #ffcc00; /* Línea debajo del título */
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-.navbar-custom .nav-link:hover {
-    color: #ffc107; /* Cambia el color a dorado */
-    text-decoration: underline; /* Subrayado al pasar el cursor */
-}
 .navbar-custom img 
 { 
     width: 60px; 
     height: auto; 
     margin-right: 10px; 
 }
+
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
 span{
     font-size: xx-large;
 }
@@ -46,15 +37,33 @@ span{
 
 }
 
+#result{
+    font-size: 2rem;
+    color: #001c41;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #ffcc00; /* Línea debajo del título */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+
 .formulario .formularioEnviar{
     grid-area: form;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 0px;
     background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px 200px;
 
 }
+
+
 
 .formulario .formularioEnviar input{
     width: 400px;
@@ -83,24 +92,25 @@ span{
 
 
 
-.piePagina{
+.piePagina {
+    grid-area: pie;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    grid-template-areas: "nades uno dos tres nades1" ;
+    grid-template-areas: "nades uno dos tres nades1";
     background-color: #001c41;
     color: white;
 }
 
-.uno{
+.uno {
     grid-area: uno;
 }
 
-.dos{
+.dos {
     grid-area: dos;
 
 }
 
-.tres{
+.tres {
     grid-area: tres;
 }
 

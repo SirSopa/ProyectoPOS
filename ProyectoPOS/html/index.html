@@ -147,6 +147,10 @@
 
                 </p>
 
+                <h5 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Porque nuestra
+                    motivación eres tu...</h5>
+
+
                 <p id="llamadaAPI">
 
                 </p>
@@ -188,7 +192,8 @@
 
 
     <script>
-
+        const port = 3000;
+        const IP = 'localhost';
         const formulario = document.getElementById("consultaEnvio");
         formulario.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -196,7 +201,7 @@
 
             try {
 
-                const response = await fetch(`http://localhost:3000/consultarEnvios${id}`);
+                const response = await fetch(`http://${IP}:${port}/consultarEnvios${id}`);
 
                 const data = await response.json();
 
@@ -218,7 +223,7 @@
 
 
         document.addEventListener('DOMContentLoaded', function () {
-            fetch('http://localhost:3000/obtenerFrase')
+            fetch(`http://${IP}:${port}/obtenerFrase`)
                 .then(function (response) {
                     if (!response.ok) {
                         throw new Error("Error al obtener la frase del día");

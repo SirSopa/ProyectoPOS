@@ -46,7 +46,7 @@
 
         </div>
 
-        <br><br>
+        <br>
 
         <div class="contenido">
 
@@ -74,7 +74,7 @@
                 <form action="" id="formularioEnvio" class="formularioEnviar">
 
                     <h2 id="result">Detalles del envío</h2>
-                    <h5>Modifique los campos necesarios</h5>
+
 
                     <p><strong>Datos de contacto</strong></p>
 
@@ -124,6 +124,7 @@
             </div>
 
         </div>
+        <br>
 
         <div class="piePagina">
 
@@ -150,6 +151,8 @@
     </div>
 
     <script>
+
+
         const form = document.getElementById('busquedaEnvio');
         const result = document.getElementById('result');
 
@@ -173,10 +176,11 @@
                     const boton = document.getElementById("botonEnviar12");
                     boton.disabled = false
                 } else {
-                    result.textContent = `ERROR:  ${data.error}`;
+                    alert(`ERROR:  ${data.error}`);
+                    location.reload();
                 }
             } catch (error) {
-                result.textContent = 'Que triste, paso algo al realizar la conexión.';
+                alert('Que triste, paso algo al realizar la conexión.');
                 console.error(error);
             }
         });
@@ -211,6 +215,7 @@
                     // Opcional: Limpia los campos del formulario
                     document.getElementById('formularioEnvio').reset();
                     document.getElementById('botonEnviar12').disabled = true;
+                    location.reload();
                 } else {
                     alert(`Error: ${data.error}`);
                 }

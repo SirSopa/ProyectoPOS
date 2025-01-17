@@ -325,7 +325,7 @@ const server = http.createServer(app);
 soap.listen(server, '/ServicioPaqueteria', service, xml);
 
 
-server.listen(port, () => {
+server.listen(port, IP, () => {
 
     console.log(`Servidor REST corriendo en http://${IP}:${port}`);
     console.log(`Servicio SOAP corriendo en http://${IP}:${port}/wsdl?wsdl`);

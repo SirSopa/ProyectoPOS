@@ -18,8 +18,8 @@
     "alto": "20",
     "ancho": "10",
     "largo": "50",
-    "ciudadOrigen": "Puebla",
-    "ciudadDestino": "Puebla"
+    "ciudadOrigen": "Dominicana",
+    "ciudadDestino": "China"
   },
   {
     "id": "FRJU12912",
@@ -31,5 +31,27 @@
     "largo": "20",
     "ciudadOrigen": "Xalapa",
     "ciudadDestino": "Beijing"
+  },
+  {
+    "id": "FRJO15618",
+    "nombreRemitente": "FRANCISCO SEGURA",
+    "nombreDestinatario": "JOEL LUNA",
+    "peso": "10",
+    "alto": "30",
+    "ancho": "15",
+    "largo": "20",
+    "ciudadOrigen": "CDMX",
+    "ciudadDestino": "Puebla"
+  },
+  {
+    "id": "JUAL15618",
+    "nombreRemitente": "JUAN LOPEZ",
+    "nombreDestinatario": "ALEJANDRO GARCIA",
+    "peso": "10",
+    "alto": "30",
+    "ancho": "15",
+    "largo": "20",
+    "ciudadOrigen": "Michoacan",
+    "ciudadDestino": "Puebla"
   }
 ]

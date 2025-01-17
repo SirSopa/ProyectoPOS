@@ -13,16 +13,6 @@
     /* Cambia el color del texto de la marca */
 }
 
-#result{
-    font-size: 2rem;
-    color: #001c41;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    border-bottom: 3px solid #ffcc00; /* Línea debajo del título */
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
 .navbar-custom .nav-link:hover {
     color: #ffc107; /* Cambia el color a dorado */
     text-decoration: underline; /* Subrayado al pasar el cursor */
@@ -38,23 +28,41 @@ span{
     font-size: xx-large;
 }
 
+*{
+    font-family: 'Roboto', sans-serif;
+}
 
-.contenido{
+#result{
+    font-size: 2rem;
+    color: #001c41;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #ffcc00; /* Línea debajo del título */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.contenido {
+
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    grid-template-areas: "nada info nada1"
-                         "nada2 info1 nada3";
-
+    grid-template-areas: "nadi contenido nadi1"
+                        "node contenido1 node1";
+                        gap: 30px
+    
 
 }
 
-.buscarEnvio{
-    grid-area: info;
+.buscarEnvio {
+    grid-area: contenido;
     align-items: center;
     justify-content: center;
     justify-items: center;
     background-color: white;
-
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
 }
 
 .buscarEnvio button{
@@ -70,12 +78,15 @@ span{
 }
 
 .formulario{
-    grid-area: info1;
+    grid-area: contenido1;
     align-items: center;
     justify-content: center;
     justify-items: center;
     background-color: white;
-    
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   
 }
 
 .formulario button{
@@ -83,6 +94,7 @@ span{
     width: 150px;
     height: 35px;
     background-color: #FFC107;
+    color:black;
 
 }
 
@@ -102,19 +114,27 @@ input{
     width: 350px;
     height: 35px;
     border: none;
+    border-radius: 5px;
+    padding: 0 1px;
+    background-color: #f8f9fa;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out;
 }
 
 input:hover{
     background-color: #f2f2f2;
 }
 
+
+
 .piePagina {
+    grid-area: pie;
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-areas: "nades uno dos tres nades1";
     background-color: #001c41;
     color: white;
-    
 }
 
 .uno {

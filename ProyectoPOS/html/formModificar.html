@@ -23,7 +23,7 @@
                     <!-- Imagen y marca -->
                     <a class="navbar-brand d-flex align-items-center" href="../html/index.html">
                         <img src="../img/iconoPrincipal.png" alt="Bootstrap" width="30" height="24">
-                        <span class="ms-2 text-white cambiarTamano" >Pkt Express</span>
+                        <span class="ms-2 text-white cambiarTamano">Pkt Express</span>
                     </a>
                     <!-- Opciones delante de la imagen -->
                     <ul class="navbar-nav flex-row gap-3">
@@ -45,7 +45,7 @@
             </nav>
 
         </div>
-
+        <br>
         <div class="contenido">
 
             <div class="buscarEnvio">
@@ -119,7 +119,7 @@
             </div>
 
         </div>
-
+        <br>
         <div class="piePagina">
 
             <div class="uno">
@@ -168,11 +168,16 @@
                     }
                     const boton = document.getElementById("botonEnviar12");
                     boton.disabled = false
+                    
+
                 } else {
-                    result.textContent = `ERROR:  ${data.error}`;
+                    alert(`ERROR:  ${data.error}`);
+                    location.reload();
                 }
             } catch (error) {
-                result.textContent = 'Que triste, paso algo al realizar la conexión.';
+
+                alert('Que triste, paso algo al realizar la conexión.');
+                location.reload();
                 console.error(error);
             }
         });
@@ -197,7 +202,7 @@
             try {
                 const response = await fetch(`http://localhost:3000/actualizarEnvio${id}`, {
                     method: 'PUT',
-                    headers: {'Content-Type': 'application/json',},
+                    headers: { 'Content-Type': 'application/json', },
                     body: JSON.stringify(datosEnvio)
                 });
 
@@ -205,12 +210,18 @@
 
                 if (response.ok) {
                     alert('Envío actualizado correctamente');
+                    location.reload();
+
                 } else {
                     alert(`Error: ${data.error}`);
+                    location.reload();
+
                 }
             } catch (error) {
                 alert('Error al conectar con el servidor');
                 console.error(error);
+                location.reload();
+
             }
         });
 
