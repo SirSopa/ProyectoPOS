@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pkt Express</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+
+    <!--Esto es el contenedor principal, aqui va a estar la imagen principal y el boton de rastrear-->
+    <div class="principal">
+
+        <!--Aqui es donde va a estar el menu con las 4 opciones de crud-->
+        <div class="cabecera">
+
+            <nav class="navbar navbar-custom">
+
+                <div class="container d-flex align-items-center">
+                    <!-- Imagen y marca -->
+                    <a class="navbar-brand d-flex align-items-center" href="../html/index.html">
+                        <img src="../img/iconoPrincipal.png" alt="Bootstrap" width="30" height="24">
+                        <span class="ms-2 text-white cambiarTamano">Pkt Express</span>
+                    </a>
+                    <!-- Opciones delante de la imagen -->
+                    <ul class="navbar-nav flex-row gap-3">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#textoAcerca">Acerca de</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../html/formRastrear.html">Rastreo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../html/formEnviar.html">Envío</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../html/formComentario.html">Comentarios</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+
+
+        <div class="rastrea">
+
+            <form action="" class="formularioRastreo" id="consultaEnvio">
+
+                <h2 class="lblEnvio">
+                    Rastrea tu envío
+                </h2>
+
+                <div class="cuadroBotonRastrear">
+                    <input type="text" id="numEnvio" name="codigoRastrea" placeholder="Ingresa el número de envío"
+                        required>
+
+                    <button type="submit" class="">
+                        Rastrear
+                    </button>
+                </div>
+
+            </form>
+
+
+        </div>
+
+
+        <div class="menuOpciones">
+            <br><br>
+
+            <h1>Servicios</h1>
+
+            <br>
+
+            <div class="cajitas">
+
+                <a href="../html/formEnviar.html">
+                    <img src="../img/iconoCrear.png" alt="" class="iconoEnviar">
+                    <p>Enviar</p>
+                </a>
+
+                <a href="../html/formModificar.html">
+                    <img src="../img/iconoModificar.png" alt="" class="iconoModificar">
+                    <p>Modificar envío</p>
+                </a>
+
+                <a href="../html/formRastrear.html">
+                    <img src="../img/iconoRastreo.png" alt="" class="iconoRastrear">
+                    <p>Rastrea Envío</p>
+                </a>
+
+                <a href="../html/formCancelar.html">
+                    <img src="../img/iconoCancelar.png" alt="" class="iconoCancelar">
+                    <p>Cancelar envío</p>
+                </a>
+
+
+            </div>
+
+            <div class="parrafoServicios">
+                <br><br>
+                <p class="parrafito">
+
+                    ¡Bienvenido a nuestro servicio de paquetería!
+
+                    En PKT Express, puedes crear, rastrear y modificar tus envíos de manera rápida y segura.
+                    Ingresa los detalles, sigue tu paquete en tiempo real y realiza cambios cuando lo necesites. ¡Todo
+                    al alcance de un clic!
+                    <br><br><br><br>
+
+                </p>
+            </div>
+
+            <br><br>
+        </div>
+
+        <div class="infoEmpresa">
+            <div class="textoEmpresa" id="textoAcerca">
+                <h1>
+                    Sobre nosotros
+                </h1>
+                <p>
+
+                    En PKT Express, entendemos que cada paquete cuenta una historia, lleva una emoción o
+                    representa un compromiso. Desde nuestros inicios, hemos trabajado incansablemente para convertirnos
+                    en un aliado confiable para personas y empresas que necesitan soluciones de paquetería rápidas,
+                    seguras y accesibles.
+
+
+
+                </p>
+
+                <h5 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Porque nuestra
+                    motivación eres tu...</h5>
+
+
+                <p id="llamadaAPI">
+
+                </p>
+            </div>
+
+            <div class="imagenEmpresa">
+                <img src="../img/imagenGenteFeliz.jpg" alt="">
+                <br><br><br>
+
+            </div>
+
+
+        </div>
+
+        <div class="piePagina">
+
+            <div class="uno">
+                <p>Av San Pablo Xalpa 180, San Martin Xochinahuac, Azcapotzalco, 02128 Ciudad de México, CDMX</p>
+                <p>55 5318 9000</p>
+                <p>Términos y condiciones</p>
+            </div>
+
+
+            <div class="dos">
+                <p>Aviso de privacidad</p>
+                <p>Uso de cookies</p>
+            </div>
+
+
+            <div class="tres">
+                <p>Siguenos</p>
+                <img src="../img/iconosRedes.PNG" alt="">
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <script>
+        const port = 3000;
+        const IP = '192.168.1.64';
+        const formulario = document.getElementById("consultaEnvio");
+        formulario.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById("numEnvio").value;
+
+            try {
+
+                const response = await fetch(`http://${IP}:${port}/consultarEnvios${id}`);
+
+                const data = await response.json();
+
+                if (response.ok) {
+
+
+                    localStorage.setItem('datosFormulario', JSON.stringify(data));
+                    window.location.href = '../html/formRastrear.html';
+
+
+                } else {
+                    alert(`${data.error}`)
+                }
+
+            } catch (error) {
+                alert('Algo ocurrio con la conexión')
+            }
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch(`http://${IP}:${port}/obtenerFrase`)
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error("Error al obtener la frase del día");
+                    }
+                    return response.json();
+                })
+                .then(function (frase) {
+                    //alert(`${frase.affirmation}`);
+                    const hoja = document.getElementById("llamadaAPI");
+                    hoja.textContent = `${frase.affirmation}`;
+                })
+                .catch(function (error) {
+                    alert('no se puede obtener la frase');
+                })
+        });
+
+
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+
+        </script>
+
+
+
+</body>
+
+
+</html>

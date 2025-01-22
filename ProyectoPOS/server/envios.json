@@ -44,14 +44,14 @@
     "ciudadDestino": "Puebla"
   },
   {
-    "id": "JUAL15618",
-    "nombreRemitente": "JUAN LOPEZ",
-    "nombreDestinatario": "ALEJANDRO GARCIA",
+    "id": "PAJO01511",
+    "nombreRemitente": "PANCHO ",
+    "nombreDestinatario": "JOEL",
     "peso": "10",
-    "alto": "30",
-    "ancho": "15",
-    "largo": "20",
-    "ciudadOrigen": "Michoacan",
+    "alto": "10",
+    "ancho": "10",
+    "largo": "10",
+    "ciudadOrigen": "Cdmx ",
     "ciudadDestino": "Puebla"
   }
 ]

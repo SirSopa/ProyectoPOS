@@ -38,5 +38,17 @@
   {
     "nombreCliente": "Pancho",
     "comentario": "*Gracias Pancho por el siguiente comentario: \nEl servicio es normal"
+  },
+  {
+    "nombreCliente": "Gloria",
+    "comentario": "*Gracias Gloria por el siguiente comentario: \nServicio regular"
+  },
+  {
+    "nombreCliente": "Karen",
+    "comentario": "*Gracias Karen por el siguiente comentario: \nServicio regular, el repartidor se llamaba arturo y me enamore <3"
+  },
+  {
+    "nombreCliente": "Gabriel",
+    "comentario": "*Gracias Gabriel por el siguiente comentario: \nServicio bueno 10/10"
   }
 ]

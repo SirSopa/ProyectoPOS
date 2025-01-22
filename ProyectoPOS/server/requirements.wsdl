@@ -133,7 +133,7 @@
     <!-- Service -->
     <service name="ServicioPaqueteria">
         <port name="ServicioPaqueteriaPort" binding="tns:ServicioPaqueteriaBinding">
-            <soap:address location="http://localhost:3000/ServicioPaqueteria"/>
+            <soap:address location="http://192.168.1.64:3000/ServicioPaqueteria"/>
         </port>
     </service>
 

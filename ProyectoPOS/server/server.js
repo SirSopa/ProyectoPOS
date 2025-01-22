@@ -10,12 +10,21 @@ const fs = require('fs');
 const reloj = new Date();
 const app = express();
 const port = 3000;
-const IP = 'localhost';
+const IP = '192.168.1.64';
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, '..', 'css'))); // Sirve los archivos CSS
+app.use(express.static(path.join(__dirname, '..', 'html'))); // Sirve los archivos HTML
+
+app.use(express.static(path.join(__dirname, '..', 'public')));
+
+// Ruta principal que sirve el archivo index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'html', 'index.html'));
+});
 
 app.use(bodyParser.json());
 app.use(cors());
+
 
 /* Servicio SOAP */
 const service = {
@@ -325,12 +334,10 @@ const server = http.createServer(app);
 soap.listen(server, '/ServicioPaqueteria', service, xml);
 
 
-server.listen(port, IP, () => {
+server.listen(port, '0.0.0.0', () => {
 
     console.log(`Servidor REST corriendo en http://${IP}:${port}`);
     console.log(`Servicio SOAP corriendo en http://${IP}:${port}/wsdl?wsdl`);
 });
-
-
 
 
